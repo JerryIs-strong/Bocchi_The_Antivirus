@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Bocchi Antivirus Software :: Main Application</title>
+</head>
+
+<body>
+    <div class="index-wrapper">
+        <div class="displayScreen">
+            <div class="home-wrapper">
+                <div class="title-1">Welcome to Bocchi Antivirus</div>
+                <div class="protect-state" id="protectState">You're under protected</div>
+                <select name="state" id="stateSelect" style="margin-top: 20px;">
+                    <option value="0">Safe</option>
+                    <option value="1">Warning</option>
+                    <option value="2">Safe</option>
+                </select>
+                <script>
+                    const stateSelect = document.getElementById("stateSelect");
+                    const state = document.getElementById("protectState");
+
+                    const stateList = ["Safe", "Warning", "Danger"];
+                    const statusList = ["You're under protected", "We meet some error", "You're under threat"];
+                    const imageList = ["Safe.png", "Warning.png", "Danger.png"];
+
+                    function updateState() {
+                        const stateIndex = stateSelect.value;
+
+                        state.innerText = statusList[stateIndex];
+                        state.style.backgroundImage = `url(./src/state/${imageList[stateIndex]})`;
+                    }
+
+                    stateSelect.addEventListener("change", updateState);
+                    updateState()
+                </script>
+            </div>
+        </div>
+        <div class="sidebar-wrapper">
+            <div class="key-btn">
+                <span class="material-symbols-outlined m3-icon">home</span>
+                Home
+            </div>
+            <div class="key-btn">
+                <span class="material-symbols-outlined m3-icon">radar</span>
+                Scan
+            </div>
+            <div class="key-btn">
+                <span class="material-symbols-outlined m3-icon">verified_user</span>
+                System Protect
+            </div>
+            <div class="key-btn">
+                <span class="material-symbols-outlined m3-icon">build</span>
+                Tools
+            </div>
+            <div class="key-btn">
+                <span class="material-symbols-outlined m3-icon">dashboard</span>
+                Dash Board
+            </div>
+            <div class="key-about">
+                <span class="material-symbols-outlined m3-icon">person</span>
+                About Us
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
