@@ -12,27 +12,62 @@ html,body{
     padding: 0;
     width: 100vw;
     height: 100vh;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .index-wrapper{
-    width: calc(100vw - 120px);
     height: 100vh;
     float: right;
 }
 
 .displayScreen{
-    width: 100%;
+    width: calc(100vw - 120px);
     height: 100%;
+    overflow: hidden;
 }
 
-.home-wrapper{
-    width: 100%;
+.home-wrapper,.About-wrapper{
+    position: absolute;
+    box-sizing: border-box;
+    width: calc(100vw - 120px);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Gothic A1', sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.page-title{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.page-title:after{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    top: 40px;
+    right: -10px;
+    background-color: #000;
+}
+
+.page-hide{
+    visibility: hidden;
+    display: none;
+}
+
+.page-active{
+    visibility: visible;
+    display: flex;
 }
 
 .title-1{
@@ -47,6 +82,13 @@ html,body{
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+}
+
+p::before{
+    content: 'For test only: ';
+    position: absolute;
+    color: #000000;
+    display: contents;
 }
 
 .sidebar-wrapper{
