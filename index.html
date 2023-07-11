@@ -6,102 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="Shortcut icon" type="image/ico" href="./web/icon.png">
     <title>Bocchi Antivirus Software :: Main Application</title>
 </head>
 
 <body>
     <div class="index-wrapper">
         <div class="displayScreen">
-            <div class="home-wrapper page" id="home-wrapper">
-                <div class="title-1">Welcome to Bocchi Antivirus</div>
-                <div class="protect-state" id="protectState">You're under protected</div>
-                <p><select name="state" id="stateSelect" style="margin-top: 20px;">
-                    <option value="0">Safe</option>
-                    <option value="1">Warning</option>
-                    <option value="2">Safe</option>
-                </select></p>
-                <textarea id="txtDebug" rows="7" cols="70" readonly></textarea>
-                <script>
-                    const stateSelect = document.getElementById("stateSelect");
-                    const state = document.getElementById("protectState");
-
-                    const stateList = ["Safe", "Warning", "Danger"];
-                    const statusList = ["You're under protected", "We meet some error", "You're under threat"];
-                    const imageList = ["Safe.png", "Warning.png", "Danger.png"];
-
-                    function updateState() {
-                        const stateIndex = stateSelect.value;
-                        txtArea = document.getElementById("txtDebug");
-
-                        state.innerText = statusList[stateIndex];
-                        state.style.backgroundImage = `url(./src/state/${imageList[stateIndex]})`;
-                        if(txtArea.value != ""){
-                            txtArea.value += `\r\nYou changed the state to ${stateList[stateIndex]}`;
-                        }else{
-                            txtArea.value += `You changed the state to ${stateList[stateIndex]}`;
-                        }
-                    }
-
-                    stateSelect.addEventListener("change", updateState);
-                    updateState()
-                </script>
-            </div>
-            <div class="Scan-wrapper page page-hide" id="Scan-wrapper">
-                <div class="page-title">病毒掃描</div>
-            </div>
-            <div class="Protect-wrapper page page-hide" id="Protect-wrapper">
-                <div class="page-title">系統保護</div>
-            </div>
-            <div class="Tools-wrapper page page-hide" id="Tools-wrapper">
-                <div class="page-title">維護工具</div>
-            </div>
-            <div class="DB-wrapper page page-hide" id="DB-wrapper">
-                <div class="page-title">儀表板</div>
-            </div>
-            <div class="About-wrapper page page-hide" id="About-wrapper">
-                <div class="page-title">關於我們</div>
+            <div class="page-frame">
+                <iframe id="mainFrame" src="./page/home.html" frameBorder="0"></iframe>
             </div>
         </div>
         <div class="sidebar-wrapper">
-            <div class="key-btn" onclick="ChangePage('home-wrapper')">
+            <div class="key-btn" onclick="ChangePage('home')">
                 <span class="material-symbols-outlined m3-icon">home</span>
                 Home
             </div>
-            <div class="key-btn" onclick="ChangePage('Scan-wrapper')">
+            <div class="key-btn" onclick="ChangePage('scan')">
                 <span class="material-symbols-outlined m3-icon">radar</span>
                 Scan
             </div>
-            <div class="key-btn" onclick="ChangePage('Protect-wrapper')">
+            <div class="key-btn" onclick="ChangePage('protect')">
                 <span class="material-symbols-outlined m3-icon">verified_user</span>
                 System Protect
             </div>
-            <div class="key-btn" onclick="ChangePage('Tools-wrapper')">
+            <div class="key-btn" onclick="ChangePage('tools')">
                 <span class="material-symbols-outlined m3-icon">build</span>
                 Tools
             </div>
-            <div class="key-btn" onclick="ChangePage('DB-wrapper')">
+            <div class="key-btn" onclick="ChangePage('dash_board')">
                 <span class="material-symbols-outlined m3-icon">dashboard</span>
                 Dash Board
             </div>
-            <div class="key-about" onclick="ChangePage('About-wrapper')">
+            <div class="key-about" onclick="ChangePage('about')">
                 <span class="material-symbols-outlined m3-icon">person</span>
                 About Us
             </div>
         </div>
         <script>
             function ChangePage(pageId) {
-                const pages = document.getElementsByClassName("page");
+                document.getElementById("mainFrame").src = `./page/${pageId}.html`
 
-                for (let i = 0; i < pages.length; i++) {
-                    pages[i].classList.remove("page-active");
-                    pages[i].classList.add("page-hide");
-                }
-
-                const page = document.getElementById(pageId);
-                page.classList.add("page-active");
-                pages[i].classList.remove("page-hide");
             }
         </script>
     </div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCAP :: Protect</title>
+
+    <style>
+        body,html{
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .Protect-wrapper {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Gothic A1', sans-serif;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .page-title {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 900;
+            font-size: 25px;
+        }
+
+        .page-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            top: 40px;
+            right: -10px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="Protect-wrapper" id="Protect-wrapper">
+        <div class="page-title">系統保護</div>
+    </div>
+</body>
+</html>

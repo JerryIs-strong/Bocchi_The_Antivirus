@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;500;700;900&family=Yomogi&display=swap">
+    <title>BCAP :: Home</title>
+
+    <style>
+        body,html{
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .home-wrapper {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Gothic A1', sans-serif;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .title-1 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .protect-state {
+            font-size: 28px;
+            font-weight: 900;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-wrapper" id="home-wrapper">
+        <div class="title-1">Welcome to Bocchi Antivirus</div>
+        <div class="protect-state" id="protectState">You're under protected</div>
+        <p><select name="state" id="stateSelect" style="margin-top: 20px;">
+                <option value="0">Safe</option>
+                <option value="1">Warning</option>
+                <option value="2">Safe</option>
+            </select></p>
+        <textarea id="txtDebug" rows="7" cols="70" readonly></textarea>
+        <script>
+            const stateSelect = document.getElementById("stateSelect");
+            const state = document.getElementById("protectState");
+
+            const stateList = ["Safe", "Warning", "Danger"];
+            const statusList = ["You're under protected", "We meet some error", "You're under threat"];
+            const imageList = ["Safe.png", "Warning.png", "Danger.png"];
+
+            function updateState() {
+                const stateIndex = stateSelect.value;
+                txtArea = document.getElementById("txtDebug");
+
+                state.innerText = statusList[stateIndex];
+                state.style.backgroundImage = `url(../src/state/${imageList[stateIndex]})`;
+                if (txtArea.value != "") {
+                    txtArea.value += `\r\nYou changed the state to ${stateList[stateIndex]}`;
+                } else {
+                    txtArea.value += `You changed the state to ${stateList[stateIndex]}`;
+                }
+            }
+
+            stateSelect.addEventListener("change", updateState);
+            updateState()
+        </script>
+    </div>
+</body>
+
+</html>
