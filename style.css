@@ -27,70 +27,6 @@ html,body{
     overflow: hidden;
 }
 
-.home-wrapper,.About-wrapper{
-    position: absolute;
-    box-sizing: border-box;
-    width: calc(100vw - 120px);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Gothic A1', sans-serif;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-.page-title{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-family: 'Gothic A1', sans-serif;
-    font-weight: 900;
-    font-size: 25px;
-}
-
-.page-title:after{
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    top: 40px;
-    right: -10px;
-    background-color: #000;
-}
-
-.page-hide{
-    visibility: hidden;
-    display: none;
-}
-
-.page-active{
-    visibility: visible;
-    display: flex;
-}
-
-.title-1{
-    font-size: 36px;
-    font-weight: 300;
-    margin-bottom: 15px;
-}
-
-.protect-state{
-    font-size: 28px;
-    font-weight: 900;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-p::before{
-    content: 'For test only: ';
-    position: absolute;
-    color: #000000;
-    display: contents;
-}
-
 .sidebar-wrapper{
     position: fixed;
     top: 0;
@@ -137,4 +73,9 @@ p::before{
 
 .key-about:hover .m3-icon{
     background-color: var(--btn-hover);
+}
+
+iframe{
+    width: calc(100vw - 120px);
+    height: 100vh;
 }
