@@ -19,6 +19,10 @@ html,body{
 }
 
 .project:nth-child(3){
+    background: linear-gradient(to right, #d0e9ff, #df78ac);
+}
+
+.project:nth-last-child(-n + 1){
     background: linear-gradient(to right, #fceabb, #f8b500);
     opacity: 0.3;
 }
