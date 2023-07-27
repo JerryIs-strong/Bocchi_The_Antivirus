@@ -12,44 +12,39 @@
 </head>
 
 <body>
-    <div class="index-wrapper">
+    <div class="index-wrapper" id="index-wrapper">
         <div class="displayScreen">
             <div class="page-frame">
                 <iframe id="mainFrame" src="./page/home.html" frameBorder="0"></iframe>
             </div>
         </div>
         <div class="sidebar-wrapper">
-            <div class="key-btn" onclick="ChangePage('home')">
-                <span class="material-symbols-outlined m3-icon">home</span>
+            <Keybtn class="key-btn" id="home">
+                <Keybtn class="material-symbols-outlined m3-icon">home</Keybtn>
                 Home
-            </div>
-            <div class="key-btn" onclick="ChangePage('scan')">
-                <span class="material-symbols-outlined m3-icon">radar</span>
+            </Keybtn>
+            <Keybtn class="key-btn" id="scan">
+                <Keybtn class="material-symbols-outlined m3-icon">radar</Keybtn>
                 Scan
-            </div>
-            <div class="key-btn" onclick="ChangePage('protect')">
-                <span class="material-symbols-outlined m3-icon">verified_user</span>
+            </Keybtn>
+            <Keybtn class="key-btn" id="protect">
+                <Keybtn class="material-symbols-outlined m3-icon">verified_user</Keybtn>
                 System Protect
-            </div>
-            <div class="key-btn" onclick="ChangePage('tools')">
-                <span class="material-symbols-outlined m3-icon">build</span>
+            </Keybtn>
+            <Keybtn class="key-btn" id="tools">
+                <Keybtn class="material-symbols-outlined m3-icon">build</Keybtn>
                 Tools
-            </div>
-            <div class="key-btn" onclick="ChangePage('dash_board')">
-                <span class="material-symbols-outlined m3-icon">dashboard</span>
+            </Keybtn>
+            <Keybtn class="key-btn" id="dash_board">
+                <Keybtn class="material-symbols-outlined m3-icon">dashboard</Keybtn>
                 Dash Board
-            </div>
-            <div class="key-about" onclick="ChangePage('about')">
-                <span class="material-symbols-outlined m3-icon">person</span>
+            </Keybtn>
+            <Keybtn class="key-about" id="about">
+                <Keybtn class="material-symbols-outlined m3-icon">person</Keybtn>
                 About Us
-            </div>
+            </Keybtn>
         </div>
-        <script>
-            function ChangePage(pageId) {
-                document.getElementById("mainFrame").src = `./page/${pageId}.html`
-
-            }
-        </script>
+        <script src="./index.js"></script>
     </div>
 </body>
 

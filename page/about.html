@@ -5,56 +5,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <title>BCAP :: About</title>
 
     <style>
-        body,html{
+        body,
+        html {
             box-sizing: border-box;
             width: 100vw;
             height: 100vh;
             margin: 0;
             padding: 0;
+            user-select: none;
+            overflow: hidden;
         }
-        
-        .About-wrapper {
-            position: absolute;
-            box-sizing: border-box;
-            width: 100vw;
-            height: 100vh;
+
+        img {
+            width: 200px;
+            -webkit-user-drag: none;
+        }
+
+        .indexContent {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: 'Gothic A1', sans-serif;
-            overflow: hidden;
-            background-color: #fff;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            width: 100vw;
+            height: 100vh;
         }
 
-        .page-title {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-family: 'Gothic A1', sans-serif;
-            font-weight: 900;
-            font-size: 25px;
+        .title_H3 {
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-size: 10px;
         }
 
-        .page-title:after {
-            content: '';
+        .ourTeam {
+            width: fit-content;
+            height: 61px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Fredericka the Great', cursive;
+            font-size: 30px;
+        }
+
+        #bg{
+            width: 600px;
             position: absolute;
-            width: 80px;
-            height: 4px;
-            top: 40px;
-            right: -10px;
-            background-color: #000;
+            bottom: -280px;
+            left: -280px;
         }
     </style>
 </head>
 
 <body>
-    <div class="About-wrapper" id="About-wrapper">
-        <div class="page-title">關於我們</div>
+    <div class="indexContent">
+        <div class="ourTeam" id="ourTeamWrapper"><img src="../src/text_icon.svg" alt=""></div>
+        <div class="title_H3">感謝你的使用 | Thank you for using</div>
+        <img id="bg" src="../src/bg01.png" alt="" srcset="">
     </div>
+    <script>
+        const TeamName = [`<img src="../src/text_icon.svg">`, "JERRY", "David", "Danger", "Samuel", "Nail", `<a style="font-family: 'Zen Kurenaido', sans-serif;font-size: 25px;">你的電腦由我們共同維護！(￣﹃￣)</a>`];
+        const TeamNameWrapper = document.getElementById("ourTeamWrapper");
+        let i = 0;
+        turn()
+
+        function turn() {
+            TeamNameWrapper.innerHTML = TeamName[i];
+            i++;
+            if (i >= TeamName.length) {
+                i = 0;
+            }
+            setTimeout(turn, 3000)
+        }
+    </script>
 </body>
 
 </html>

@@ -29,6 +29,7 @@ html,body{
 
 .sidebar-wrapper{
     position: fixed;
+    padding: 5px 0;
     top: 0;
     left: 0;
     width: 120px;
@@ -46,6 +47,19 @@ html,body{
     margin-bottom: 5px;
 }
 
+.m3-icon::after{
+    content: '';
+    position: absolute;
+    transform: scaleX(0);
+    width: 64px;
+    height: 28px;
+    border-radius: 30px;
+    background-color: var(--btn-active);
+    transform-origin: center;
+    transition: transform 190ms ease-in-out;
+    margin: -2px 0 0 -44px;
+}
+
 .key-btn{
     padding: 0 10px;
     margin: 5px 0;
@@ -61,6 +75,24 @@ html,body{
     background-color: var(--btn-hover);
 }
 
+.key-about:hover .m3-icon{
+    background-color: var(--btn-hover);
+}
+
+.active:hover .m3-icon{
+    background-color: transparent;
+}
+
+.key-btn:active .m3-icon::after{
+    background-color: var(--btn-active);
+    transform: scaleX(1);
+}
+
+.active .m3-icon::after{
+    background-color: var(--btn-active);
+    transform: scaleX(1);
+}
+
 .key-about{
     padding: 15px 10px;
     margin: 10px 0 0;
@@ -71,11 +103,7 @@ html,body{
     cursor: pointer;
 }
 
-.key-about:hover .m3-icon{
-    background-color: var(--btn-hover);
-}
-
-iframe{
+iframe,img{
     width: calc(100vw - 120px);
     height: 100vh;
 }
