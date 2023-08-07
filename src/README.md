@@ -8,4 +8,4 @@
 3. Download
     - No need, api will automatically choose the latest version to download.(No need to add any ${additionVariable})
 
-```https://bocchi-the-antivirus-api.000webhostapp.com/script/update.php?action=${action}&${additionVariable}```
+```https://bocchi-the-antivirus-api.000webhostapp.com/?action=${action}&${additionVariable}```
