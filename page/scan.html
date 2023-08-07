@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>BCAP :: Scanner</title>
 
     <style>
-        body,html{
+        body,
+        html {
             box-sizing: border-box;
             width: 100vw;
             height: 100vh;
             margin: 0;
             padding: 0;
         }
-        
+
         .Scan-wrapper {
             position: absolute;
             box-sizing: border-box;
@@ -47,11 +56,131 @@
             right: -10px;
             background-color: #000;
         }
+
+        .indexContent {
+            width: 100vw;
+            height: fit-content;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            padding: 80px 0 50px 0;
+        }
+
+        .scan-area {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            background-color: rgba(0, 0, 0, 0.055);
+            border-radius: 30px;
+            margin: 10px 20px;
+            max-width: 212px;
+            min-width: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scan-h1 {
+            text-align: center;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: 600;
+            padding: 20px 0 10px 0;
+        }
+
+        .scan-describe {
+            text-align: center;
+            font-family: 'Microsoft YaHei Light', sans-serif;
+            font-size: 12px;
+            padding: 0 10px;
+        }
+
+        .alpha {
+            font-size: 5px;
+            font-weight: 400;
+            background-color: rgba(0, 204, 255, .5);
+            border-radius: 30px;
+            padding: 1px 5px;
+            margin-left: 5px;
+        }
+
+        .scan-start-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-size: 4px;
+            margin: 20px 0 20px 0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 10px 25px;
+        }
+
+        .scan-start-go {
+            background-color: #76b4ee;
+            padding: 1.5px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .scan-start-scan {
+            font-weight: 400;
+        }
+
+        .scan-scanned-counter {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-size: 5px;
+            margin-bottom: 10px;
+        }
+
+        .scan-scanned-counter::before {
+            content: "✅";
+        }
+
+        .scan-scanned-counter{
+            display: flex;
+        }
     </style>
 </head>
+
 <body>
     <div class="Scan-wrapper" id="Scan-wrapper">
         <div class="page-title">病毒掃描</div>
+        <div class="indexContent">
+            <div class="scan-syatem scan-area">
+                <div class="scan-h1">完整掃描</div>
+                <div class="scan-describe">檢查整個電腦，可能會花一些時間並減緩你的電腦，但能確保所有文件安全無虞。</div>
+                <div class="scan-start-wrapper">
+                    <div class="scan-start-scan">執行掃描</div>
+                    <div class="scan-start-go">立即</div>
+                </div>
+                <div class="scan-scanned-counter"><div class="scan-scanned-counter-amount">0</div>個文件已掃描</div>
+            </div>
+            <div class="scan-folder scan-area">
+                <div class="scan-h1">内容掃描</div>
+                <div class="scan-describe">掃描文件夾、單獨你希望掃描的物件，幫助你確認有懷疑的文件的安全性。</div>
+                <div class="scan-start-wrapper">
+                    <div class="scan-start-scan">執行掃描</div>
+                    <div class="scan-start-go">立即</div>
+                </div>
+                <div class="scan-scanned-counter"><div class="scan-scanned-counter-amount">0</div>個文件已掃描</div>
+            </div>
+            <div class="scan-file scan-area">
+                <div class="scan-h1">弱點掃描<a class="alpha">alpha</a></div>
+                <div class="scan-describe">掃描可能會被惡意軟體利用的弱點區域，幫助你找出高危項目並防止電腦感染。</div>
+                <div class="scan-start-wrapper">
+                    <div class="scan-start-scan">執行掃描</div>
+                    <div class="scan-start-go">立即</div>
+                </div>
+                <div class="scan-scanned-counter"><div class="scan-scanned-counter-amount">0</div>個文件已掃描</div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Zen+Kurenaido&family=Major+Mono+Display&family=Koulen&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>BCAP :: About</title>
 
     <style>
@@ -58,36 +62,159 @@
             font-size: 30px;
         }
 
-        #bg{
+        #bg {
             width: 600px;
             position: absolute;
             bottom: -280px;
             left: -280px;
+        }
+
+        .function-kit {
+            position: fixed;
+            width: fit-content;
+            height: fit-content;
+            top: 0;
+            right: 0;
+            padding: 10px 20px;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: bold;
+        }
+
+        .kit-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 28px;
+            color: transparent;
+            -webkit-text-stroke: 0.3px #000;
+        }
+
+        .kit- {
+            cursor: pointer;
+            width: fit-content;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .color-kit {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid #000;
+            transition: all 0.5s ease-in-out;
+            top: 25px;
+            right: 140px;
+        }
+
+        .about-mainFrame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #wrapper-website .title_H2 {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #wrapper-website .title_H2 a {
+            margin-top: 10px;
+        }
+
+        .title_H2 {
+            display: flex;
+            flex-direction: row;
+            font-family: 'Major Mono Display', monospace;
+            font-size: 12px;
+            margin: 6px 0;
+        }
+
+        .varsion {
+            margin: 0;
+            background-color: #00000036;
+            margin-left: 5px;
+        }
+
+        .btn-01 {
+            font-family: 'Koulen', cursive;
+            font-size: 7px;
+            border: 2px solid #000;
+            padding: 0 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .btn-01:hover {
+            background-color: #0000000e;
+        }
+
+        .btn-01:active {
+            transform: scale(0.95);
+        }
+
+        .help-icon {
+            font-size: 220px;
+            color: #00000005;
+            position: absolute;
+            z-index: -1;
         }
     </style>
 </head>
 
 <body>
     <div class="indexContent">
-        <div class="ourTeam" id="ourTeamWrapper"><img src="../src/text_icon.svg" alt=""></div>
-        <div class="title_H3">感謝你的使用 | Thank you for using</div>
-        <img id="bg" src="../src/bg01.png" alt="" srcset="">
+        <div class="about-mainFrame" id="wrapper-version">
+            <span class="material-symbols-outlined help-icon">browser_updated</span>
+            <div class="title_H2">Current version:<p class="varsion" id="n-version">0.0.1 Alpha</p>
+            </div>
+            <div class="title_H2">Cloud latest update version:<p class="varsion" id="c-version"></p>
+            </div>
+            <div class="title_H2">Verified by <p class="varsion" id="v-version"></p></div>
+            <div class="title_H2">Server time:<p class="varsion" id="s-version"></p>
+            </div>
+            <a href="https://bocchi-the-antivirus-api.000webhostapp.com/download.php" id="btn-01-wrapper"
+                target="_blank"></a>
+        </div>
+        <div class="about-mainFrame" id="wrapper-sensei" style="display: none;">
+            <span class="material-symbols-outlined help-icon">group</span>
+            <div class="ourTeam" id="ourTeamWrapper"><img src="../src/text_icon.svg" alt=""></div>
+            <div class="title_H3">感謝你的使用 | Thank you for using</div>
+        </div>
+        <div class="about-mainFrame" id="wrapper-update" style="display: none;">
+            <span class="material-symbols-outlined help-icon">web_stories</span>
+            <div class="title_H2">update:</div>
+        </div>
+        <div class="about-mainFrame" id="wrapper-website" style="display: none;">
+            <span class="material-symbols-outlined help-icon">globe_asia</span>
+            <div class="title_H2">website:<a
+                    href="https://jerryis-strong.github.io/Bocchi_Antivirus_Software_Website/" target="_blank">https://jerryis-strong.github.io/Bocchi_Antivirus_Software_Website/</a>
+            </div>
+        </div>
+        <div class="function-kit">
+            <div class="kit-wrapper" id="kit-wrapper">
+                <Keybtn class="kit-" id="version" style="color: #000;">版本參數</Keybtn>
+                <Keybtn class="kit-" id="update">更新日志</Keybtn>
+                <Keybtn class="kit-" id="website">官方網站</Keybtn>
+                <Keybtn class="kit-" id="sensei">Sensei</Keybtn>
+            </div>
+            <div class="color-kit" id="color-kit"></div>
+        </div>
     </div>
-    <script>
-        const TeamName = [`<img src="../src/text_icon.svg">`, "JERRY", "David", "Danger", "Samuel", "Nail", `<a style="font-family: 'Zen Kurenaido', sans-serif;font-size: 25px;">你的電腦由我們共同維護！(￣﹃￣)</a>`];
-        const TeamNameWrapper = document.getElementById("ourTeamWrapper");
-        let i = 0;
-        turn()
-
-        function turn() {
-            TeamNameWrapper.innerHTML = TeamName[i];
-            i++;
-            if (i >= TeamName.length) {
-                i = 0;
-            }
-            setTimeout(turn, 3000)
-        }
-    </script>
+    <script src="./JS/about.js"></script>
 </body>
 
 </html>

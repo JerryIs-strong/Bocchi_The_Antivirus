@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Kosugi+Maru&family=PT+Mono&family=Sawarabi+Mincho&display=swap');
+
+html,body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.project{
+    padding: 20px 40px;
+}
+
+.project:nth-child(1){
+    background:linear-gradient(to right, #ff00cc54, #33339948);
+}
+
+.project:nth-child(2){
+    background: linear-gradient(to left, #a1ffce, #faffd1);
+}
+
+.project:nth-child(3){
+    background: linear-gradient(to right, #fceabb, #f8b500);
+    opacity: 0.3;
+}
+
+.pointOne{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.number{
+    font-size: 120px;
+    margin-right: 50px;
+    font-style: italic;
+    font-family: 'Agdasima', sans-serif;
+}
+
+.summery{
+    font-family: 'Sawarabi Mincho', serif; 
+    font-weight: bold;
+    font-size: 23px;
+    word-spacing: 12px;
+}
+
+.time{
+    font-family: 'PT Mono', monospace;
+    margin-bottom: 10px;
+}
+
+.content{
+    font-family: 'Kosugi Maru', sans-serif;
+}
