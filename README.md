@@ -12,6 +12,7 @@ Pyavlab83 (Bocchi The Antivirus)已獲得麻省理工學院許可證的許可，
   - Samuel(後期測試)
   - Nail(後期測試)
 - ChatGPT人工智能聊天機器人
+- Github Action(自動構建與分發文件)
 <div align="center">
    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
    <img src="https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white">
