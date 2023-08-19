@@ -3,7 +3,7 @@
 ## 開源協議
 Pyavlab83 (Bocchi The Antivirus)已獲得麻省理工學院許可證的許可，請在使用此項目時謹遵協議([MIT License](https://github.com/JerryIs-strong/Bocchi_Antivirus_Software/blob/main/LICENSE))。
 ## 下載與更新
-前往本項目的[Release](https://github.com/JerryIs-strong/Bocchi_The_Antivirus/releases/)頁面下載BCAP，文件由Github Action自動構建。BCAP會自動搜尋並更新病毒樣本庫，但如果需要更新BCAP應用，則需自行下載新版本的BCAP軟件並安裝更新。另外，BCAP涉及系統的安全性與穩定性，僅推薦與虛擬機中安裝Pre-review的測試版本。
+前往本項目的[Release](https://github.com/JerryIs-strong/Bocchi_The_Antivirus/releases/)頁面下載BCAP，文件由Github Action自動構建。BCAP會自動搜尋並更新病毒樣本庫，但如果需要更新BCAP應用，則需自行下載新版本的BCAP軟件並安裝更新。另外，BCAP涉及系統的安全性與穩定性，僅推薦於虛擬機中安裝Pre-review的測試版本。
 ## 貢獻
 - Pyavlab83實驗室:
   - JERRY(前端開發, UI設計, 語言翻譯)
