@@ -7,10 +7,10 @@ Pyavlab83 (Bocchi The Antivirus)已獲得麻省理工學院許可證的許可，
 ## 貢獻
 - Pyavlab83實驗室:
   - JERRY(前端開發, UI設計, 語言翻譯)
-  - Danger(後端開發, Python擴展, NodeJS擴展)
-  - David(資料收集與分析)
-  - Samuel(後期測試)
-  - Nail(後期測試)
+  - ~~Danger(後端開發, Python擴展, NodeJS擴展)~~
+  - ~~David(資料收集與分析)~~
+  - ~~Samuel(後期測試)~~
+  - ~~Nail(後期測試)~~
 - ChatGPT人工智能聊天機器人
 - Github Action(自動構建與分發文件)
 <div align="center">
